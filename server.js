@@ -8,6 +8,16 @@ app.post('/logged.js', (req, res) => {
     res.json({ message: 'Data received successfully' });
 });
 
+app.get('/logged.js', (req, res) => {
+    const data = {
+        tableData: [
+            { Current: 'Value1', Grower: 'Grower1', Pollen: 'Pollen1', Seed: 'Seed1' },
+            { Current: 'Value2', Grower: 'Grower2', Pollen: 'Pollen2', Seed: 'Seed2' }
+        ]
+    };
+    res.json(data);
+});
+
 app.listen(port, () => {
     console.log(`Server Running`);
 });
